@@ -191,8 +191,8 @@ a:hover {
 
 .brand-logo {
   width: 28px;
-  height: 18px;
-  color: var(--mauve);
+  height: 28px;
+  object-fit: contain;
 }
 
 .site-header nav {
@@ -217,10 +217,10 @@ a:hover {
 }
 
 .hero-logo {
-  width: 88px;
-  height: 56px;
-  color: var(--mauve);
-  margin-bottom: 1.5rem;
+  display: block;
+  width: 110px;
+  height: auto;
+  margin: 0 auto 1.5rem;
 }
 
 .badge {
