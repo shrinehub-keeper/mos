@@ -1,0 +1,475 @@
+@font-face {
+  font-family: "Departure Mono";
+  src: url("../fonts/DepartureMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+[data-theme="mocha"] {
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --surface2: #585b70;
+  --surface1: #45475a;
+  --surface0: #313244;
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+}
+
+[data-theme="macchiato"] {
+  --rosewater: #f4dbd6;
+  --flamingo: #f0c6c6;
+  --pink: #f5bde6;
+  --mauve: #c6a0f6;
+  --red: #ed8796;
+  --maroon: #ee99a0;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --sky: #91d7e3;
+  --sapphire: #7dc4e4;
+  --blue: #8aadf4;
+  --lavender: #b7bdf8;
+  --text: #cad3f5;
+  --subtext1: #b8c0e0;
+  --subtext0: #a5adcb;
+  --overlay2: #939ab7;
+  --overlay1: #8087a2;
+  --overlay0: #6e738d;
+  --surface2: #5b6078;
+  --surface1: #494d64;
+  --surface0: #363a4f;
+  --base: #24273a;
+  --mantle: #1e2030;
+  --crust: #181926;
+}
+
+[data-theme="frappe"] {
+  --rosewater: #f2d5cf;
+  --flamingo: #eebebe;
+  --pink: #f4b8e4;
+  --mauve: #ca9ee6;
+  --red: #e78284;
+  --maroon: #ea999c;
+  --peach: #ef9f76;
+  --yellow: #e5c890;
+  --green: #a6d189;
+  --teal: #81c8be;
+  --sky: #99d1db;
+  --sapphire: #85c1dc;
+  --blue: #8caaee;
+  --lavender: #babbf1;
+  --text: #c6d0f5;
+  --subtext1: #b5bfe2;
+  --subtext0: #a5adce;
+  --overlay2: #949cbb;
+  --overlay1: #838ba7;
+  --overlay0: #737994;
+  --surface2: #626880;
+  --surface1: #51576d;
+  --surface0: #414559;
+  --base: #303446;
+  --mantle: #292c3c;
+  --crust: #232634;
+}
+
+[data-theme="latte"] {
+  --rosewater: #dc8a78;
+  --flamingo: #dd7878;
+  --pink: #ea76cb;
+  --mauve: #8839ef;
+  --red: #d20f39;
+  --maroon: #e64553;
+  --peach: #fe640b;
+  --yellow: #df8e1d;
+  --green: #40a02b;
+  --teal: #179299;
+  --sky: #04a5e5;
+  --sapphire: #209fb5;
+  --blue: #1e66f5;
+  --lavender: #7287fd;
+  --text: #4c4f69;
+  --subtext1: #5c5f77;
+  --subtext0: #6c6f85;
+  --overlay2: #7c7f93;
+  --overlay1: #8c8fa1;
+  --overlay0: #9ca0b0;
+  --surface2: #acb0be;
+  --surface1: #bcc0cc;
+  --surface0: #ccd0da;
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--text);
+  font-family: "Departure Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: var(--mauve);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
+
+.site-header {
+  border-bottom: 1px solid var(--surface0);
+  background: var(--mantle);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand:hover {
+  text-decoration: none;
+  color: var(--mauve);
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.site-header nav a {
+  color: var(--subtext0);
+}
+
+.site-header nav a:hover {
+  color: var(--mauve);
+}
+
+/* Hero */
+
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+}
+
+.hero-logo {
+  display: block;
+  width: 110px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  background: color-mix(in srgb, var(--yellow) 12%, transparent);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin: 0 0 1.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.motto {
+  font-size: 1.25rem;
+  color: var(--mauve);
+  margin: 0 0 1.5rem;
+}
+
+.lede {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--subtext1);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--mauve);
+  background: var(--mauve);
+  color: var(--crust);
+  font-weight: 700;
+}
+
+.btn:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--mauve);
+}
+
+/* Sections */
+
+section {
+  padding: 3rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+section > p {
+  color: var(--subtext1);
+}
+
+.prerelease-note {
+  border: 1px solid var(--yellow);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--yellow) 8%, var(--mantle));
+}
+
+.prerelease-note h2 {
+  color: var(--yellow);
+}
+
+.prerelease-note p {
+  margin: 0.5rem 0;
+}
+
+.prerelease-note code {
+  background: var(--surface0);
+  color: var(--peach);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Editions */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  border: 1px solid var(--surface0);
+  background: var(--mantle);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.card.featured {
+  border-color: var(--mauve);
+}
+
+.card h3 {
+  margin: 0 0 0.25rem;
+  color: var(--mauve);
+}
+
+.card .tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--subtext0);
+  background: var(--surface0);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.card p:last-child {
+  color: var(--subtext1);
+  margin: 0;
+}
+
+/* Stack table */
+
+.stack table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.stack th,
+.stack td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--surface0);
+}
+
+.stack th {
+  color: var(--subtext0);
+  font-weight: 700;
+}
+
+.stack td:last-child {
+  color: var(--mauve);
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--surface0);
+  background: var(--mantle);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--subtext0);
+  font-size: 0.85rem;
+  padding-bottom: 1.5rem;
+}
+
+.site-footer .wrap a {
+  color: var(--subtext0);
+}
+
+.theme-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.theme-switcher button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--subtext1);
+  background: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.theme-switcher button:hover {
+  border-color: var(--mauve);
+}
+
+.theme-switcher button[aria-pressed="true"] {
+  border-color: var(--mauve);
+  color: var(--text);
+  background: var(--surface1);
+}
+
+.theme-switcher button .swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.swatch-latte {
+  background: #1e66f5;
+}
+
+.swatch-frappe {
+  background: #8caaee;
+}
+
+.swatch-macchiato {
+  background: #8aadf4;
+}
+
+.swatch-mocha {
+  background: #89b4fa;
+}
+
+@media (max-width: 600px) {
+  .site-header .wrap {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+}
