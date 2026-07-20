@@ -1,2 +1,2 @@
 # non-systemd-gaming
-Website for MobiusOS
+Website for MobiusOS, because mobius-os.github.io is taken even without a (-)
