@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mocha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MobiusOS — complex yet simple</title>
+<meta name="description" content="MobiusOS is a systemd-free Linux gaming distribution built on OpenRC, eudev and elogind. Pre-release — ISOs are not yet available.">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("mobiusos-theme");
+    if (t === "latte" || t === "frappe" || t === "macchiato" || t === "mocha") {
+      document.documentElement.setAttribute("data-theme", t);
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="preload" href="assets/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="assets/img/logo.svg" alt="MobiusOS logo">
+      <span>MobiusOS</span>
+    </a>
+    <nav>
+      <a href="#status">Status</a>
+      <a href="#editions">Editions</a>
+      <a href="#stack">Under the hood</a>
+      <a href="https://github.com/shrinehub-keeper/non-systemd-gaming" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <img class="hero-logo" src="assets/img/logo.svg" alt="">
+    <p class="badge">⚠ Pre-release — ISOs are not yet available</p>
+    <h1>MobiusOS</h1>
+    <p class="motto">complex yet simple.</p>
+    <p class="lede">
+      A systemd-free Linux gaming distribution. No systemd anywhere in the
+      stack — just OpenRC, eudev, elogind, and the tools that get out of
+      your way so games can use the hardware they're running on.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#editions">See editions</a>
+      <a class="btn btn-ghost" href="https://github.com/shrinehub-keeper/non-systemd-gaming" target="_blank" rel="noopener">Follow progress on GitHub</a>
+    </div>
+  </section>
+
+  <section class="prerelease-note" id="status">
+    <h2>Where things stand</h2>
+    <p>
+      MobiusOS is in <strong>pre-release</strong>. There are no downloadable
+      ISOs yet — the project is still being built out. This site tracks
+      what's planned; check the GitHub repo for actual progress.
+    </p>
+    <p>
+      The pre-release build uses an <strong>Artix Linux</strong> base, but
+      package management is handled with <strong>Nix</strong> instead of
+      Artix's default tooling.
+    </p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>Why no systemd?</h2>
+    <p>
+      MobiusOS swaps systemd out for a leaner init and service stack:
+      <code>OpenRC</code> for init, <code>eudev</code> for device
+      management, <code>elogind</code> for session/seat handling,
+      <code>dbus</code> for IPC, <code>fcron</code> for scheduled tasks, and
+      <code>syslog-ng</code> for logging. Fewer daemons competing for
+      attention on a gaming rig, and a service layer you can actually read
+      and edit as plain shell scripts.
+    </p>
+  </section>
+
+  <section class="editions" id="editions">
+    <h2>Editions</h2>
+    <p>Three builds, depending on what you're running MobiusOS on.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Legacy</h3>
+        <p class="tag">Pre-UEFI · pre-2012</p>
+        <p>
+          Recommended for pre-UEFI systems (roughly before 2012) and/or
+          hardware that can't handle a modern desktop environment.
+        </p>
+      </article>
+      <article class="card featured">
+        <h3>Main</h3>
+        <p class="tag">UEFI · 2012+</p>
+        <p>
+          Recommended for UEFI systems (2012 onward) and/or hardware that
+          can comfortably run a modern desktop environment.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Deck</h3>
+        <p class="tag">Handheld</p>
+        <p>
+          The Main edition, tuned for Steam Deck.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="stack" id="stack">
+    <h2>Under the hood</h2>
+    <p>The pieces that replace systemd's job, one component at a time.</p>
+    <table>
+      <thead>
+        <tr><th>Component</th><th>MobiusOS uses</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Init</td><td>OpenRC</td></tr>
+        <tr><td>Device management</td><td>eudev</td></tr>
+        <tr><td>Session / seat management</td><td>elogind</td></tr>
+        <tr><td>IPC</td><td>dbus</td></tr>
+        <tr><td>Scheduled tasks</td><td>fcron</td></tr>
+        <tr><td>Logging</td><td>syslog-ng</td></tr>
+        <tr><td>libudev compatibility</td><td>libudev-zero</td></tr>
+        <tr><td>Base / packages (pre-release)</td><td>Artix Linux base, Nix package management</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>MobiusOS — public domain / Unlicense.</span>
+    <a href="https://github.com/shrinehub-keeper/non-systemd-gaming" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <div class="theme-switcher" role="group" aria-label="Theme">
+    <button type="button" data-flavor="latte"><span class="swatch swatch-latte"></span>Latte</button>
+    <button type="button" data-flavor="frappe"><span class="swatch swatch-frappe"></span>Frappé</button>
+    <button type="button" data-flavor="macchiato"><span class="swatch swatch-macchiato"></span>Macchiato</button>
+    <button type="button" data-flavor="mocha"><span class="swatch swatch-mocha"></span>Mocha</button>
+  </div>
+</footer>
+
+<script src="assets/js/theme.js"></script>
+</body>
+</html>
