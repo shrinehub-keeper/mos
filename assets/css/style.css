@@ -385,6 +385,41 @@ section > p {
   color: var(--mauve);
 }
 
+/* FAQ */
+
+.faq-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  border-left: 2px solid var(--mauve);
+  padding-left: 1.25rem;
+}
+
+.faq-item h3 {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  color: var(--subtext1);
+  margin: 0.5rem 0;
+}
+
+.faq-item ul {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+  color: var(--subtext1);
+}
+
+.faq-item li {
+  margin: 0.25rem 0;
+}
+
 /* Footer */
 
 .site-footer {

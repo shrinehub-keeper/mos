@@ -31,6 +31,7 @@
       <a href="#status">Status</a>
       <a href="#editions">Editions</a>
       <a href="#stack">Under the hood</a>
+      <a href="#faq">FAQ</a>
       <a href="https://github.com/shrinehub-keeper/non-systemd-gaming" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>
@@ -65,13 +66,6 @@
       The pre-release build uses an <strong>Artix Linux</strong> base, but
       package management is handled with <strong>Nix</strong> instead of
       Artix's default tooling.
-    </p>
-  </section>
-
-  <section class="about" id="about">
-    <h2>Why no systemd?</h2>
-    <p>
-
     </p>
   </section>
 
@@ -114,6 +108,63 @@
         <tr><td>Base / packages (pre-release)</td><td>Artix Linux base, Nix package management</td></tr>
       </tbody>
     </table>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2>Questions &amp; answers</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Q: What is systemd?</h3>
+        <p>
+          A: systemd is the first process that runs on your computer
+          (after the kernel, of course). It is one of the most popular
+          initialization systems (Process ID 1) and service managers, and
+          is found in almost every GNU/Linux distribution these days. Why?
+        </p>
+        <ul>
+          <li>Parallel booting</li>
+          <li>Dependency resolution (automatically figures out what services need each other)</li>
+          <li>Built-in logging (with journald)</li>
+          <li>Advanced resource management</li>
+        </ul>
+        <p>etc.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q: What's OpenRC?</h3>
+        <p>
+          A: OpenRC is a dependency-based initialization system and
+          service manager. It manages system startup, shutdown, and the
+          background services (daemons) that run while your computer is
+          on. It's most famously used as the default init system for
+          <a href="https://www.gentoo.org" target="_blank" rel="noopener">Gentoo Linux</a>
+          and
+          <a href="https://www.alpinelinux.org" target="_blank" rel="noopener">Alpine Linux</a>.
+          It is also one of the most popular alternatives to systemd. Why?
+        </p>
+        <ul>
+          <li>Modular architecture (it remains strictly an init system and delegates tasks like logging and networking to specialized, separate tools)</li>
+          <li>Reduced bloat (avoids taking over core system functions)</li>
+          <li>Simpler configuration (uses straightforward shell scripts)</li>
+          <li>Faster boot times (on servers or systems with large numbers of virtual devices or very few services)</li>
+        </ul>
+        <p>etc.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q: What do gaming and systemd have to do with each other?</h3>
+        <p>
+          A: Nothing much. Steam doesn't care if you have systemd or not.
+          Nor does Proton, Lutris, or KDE.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q: Why are you using OpenRC then?</h3>
+        <p>
+          A: Because everyone is on systemd. I wanna prove that systemd
+          isn't some Linux gaming prerequisite. OpenRC shows that you can
+          have a clean, modular system and still suck at Team Fortress 2.
+        </p>
+      </div>
+    </div>
   </section>
 
 </main>
