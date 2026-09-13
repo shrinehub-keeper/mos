@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MobiusOS — complex yet simple</title>
-<meta name="description" content="MobiusOS is a systemd-free Linux gaming distribution built on OpenRC, eudev and elogind. Pre-release — ISOs are not yet available.">
+<meta name="description" content="MobiusOS is a systemd-free Linux gaming distribution built on dinit, eudev and elogind. Pre-release — ISOs are not yet available.">
 <link rel="icon" href="assets/img/logo-icon.png" type="image/png">
 <script>
 (function () {
@@ -46,7 +46,7 @@
     <p class="motto">complex yet simple.</p>
     <p class="lede">
       A systemd-free Linux gaming distribution. No systemd anywhere in the
-      stack — just OpenRC, eudev, elogind, and the tools that get out of
+      stack — just dinit, eudev, elogind, and the tools that get out of
       your way so games can use the hardware they're running on.
     </p>
     <div class="hero-actions">
@@ -100,7 +100,7 @@
         <tr><th>Component</th><th>MobiusOS uses</th></tr>
       </thead>
       <tbody>
-        <tr><td>Init</td><td>OpenRC</td></tr>
+        <tr><td>Init</td><td>dinit</td></tr>
         <tr><td>Device management</td><td>eudev</td></tr>
         <tr><td>Session / seat management</td><td>elogind</td></tr>
         <tr><td>Scheduled tasks</td><td>fcron</td></tr>
@@ -130,38 +130,39 @@
         <p>etc.</p>
       </div>
       <div class="faq-item">
-        <h3>Q: What's OpenRC?</h3>
+        <h3>Q: What's dinit?</h3>
         <p>
-          A: OpenRC is a dependency-based initialization system and
-          service manager. It manages system startup, shutdown, and the
-          background services (daemons) that run while your computer is
-          on. It's most famously used as the default init system for
-          <a href="https://www.gentoo.org" target="_blank" rel="noopener">Gentoo Linux</a>
-          and
-          <a href="https://www.alpinelinux.org" target="_blank" rel="noopener">Alpine Linux</a>.
-          It is also one of the most popular alternatives to systemd. Why?
+          A: dinit is a service manager / supervision system, which can (on
+          Linux) also function as a system manager and init. It can be
+          found in
+          <a href="https://chimera-linux.org" target="_blank" rel="noopener">Chimera Linux</a>,
+          <a href="https://os.ewe.moe" target="_blank" rel="noopener">eweOS</a>,
+          etc. It is:
         </p>
         <ul>
-          <li>Modular architecture (it remains strictly an init system and delegates tasks like logging and networking to specialized, separate tools)</li>
-          <li>Reduced bloat (avoids taking over core system functions)</li>
-          <li>Simpler configuration (uses straightforward shell scripts)</li>
-          <li>Faster boot times (on servers or systems with large numbers of virtual devices or very few services)</li>
+          <li>Portable — written in portable C++ code; compiles and runs on a variety of Unix-likes (Linux, various BSDs)</li>
+          <li>Compact — with a reasonable feature set, but a sufficiently limited scope; designed to work with other system components, rather than replace them</li>
+          <li>Robust — written with a focus on being secure and correct</li>
+          <li>Usable — with simple configuration syntax and control commands</li>
+          <li>Well documented — check the extensive manual pages!</li>
+          <li>Free and Open Source — distributed under the Apache License version 2.0</li>
         </ul>
-        <p>etc.</p>
       </div>
       <div class="faq-item">
         <h3>Q: What do gaming and systemd have to do with each other?</h3>
         <p>
           A: Nothing much. Steam doesn't care if you have systemd or not.
-          Nor does Proton, Lutris, or KDE.
+          Nor does Proton, Lutris, or KDE (well KDE might have a
+          systemd-only future so eh).
         </p>
       </div>
       <div class="faq-item">
-        <h3>Q: Why are you using OpenRC then?</h3>
+        <h3>Q: Why are you using dinit then?</h3>
         <p>
-          A: Because everyone is on systemd. I wanna prove that systemd
-          isn't some Linux gaming prerequisite. OpenRC shows that you can
-          have a clean, modular system and still suck at Team Fortress 2.
+          A: Because everyone is on systemd, and its bloated af. I wanna
+          prove that systemd isn't some Linux gaming prerequisite. dinit
+          shows that you can have a clean, modular system and still suck
+          at Team Fortress 2.
         </p>
       </div>
     </div>
